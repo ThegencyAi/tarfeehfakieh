@@ -1,18 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Gency Ai</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gency AI Demo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc; /* Uniform soft background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column; /* Stack elements vertically */
+        }
+
+        .container {
+            background-color: #ffffff; /* White background for the content box */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            padding: 40px;
+            width: 90%;
+            max-width: 700px; /* Wider maximum width for a professional look */
+            text-align: center; /* Center text */
+        }
+
+        h1 {
+            color: #007BFF; /* Primary color for headers */
+            font-size: 2.5em;
+            margin-bottom: 10px; /* Slightly reduced bottom margin */
+        }
+
+        h2 {
+            color: #333; /* Darker text for subheading */
+            font-size: 1.8em;
+            margin: 20px 0; /* Spacing above and below */
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555; /* Softer text color for readability */
+            line-height: 1.6;
+            margin: 10px 0; /* Consistent margin for paragraphs */
+        }
+
+        .highlight {
+            color: #FF5722; /* Highlight color for emphasis */
+            font-weight: bold;
+        }
+
+        .sneak-preview {
+            font-style: italic; /* Italicized text for emphasis */
+            margin-top: 20px;
+            color: #6c757d; /* Gray color for sneak preview */
+        }
+
+        #VG_OVERLAY_CONTAINER {
+            width: 100%; /* Full width for the chat widget */
+            height: 500px; /* Increased height for visibility */
+            margin-top: 30px; /* Space above the chat widget */
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden; /* Hide overflow for rounded corners */
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to The Gency Ai this is Tarfeeh Fakieh Demo</h1>
-    <p>This is a demonstration of our AI chat agent solution tailored for your needs.</p>
-    <p>Take a peek at this demo—it's like a sneak preview of the magic our Ai Agency can bring to your team!</p>
+    <div class="container">
+        <h1>Welcome to The Gency AI!</h1>
+        <h2>Tarfeeh Fakieh Demo</h2>
+        <p>This is a demonstration of our AI chat agent solution tailored for your needs.</p>
+        <p class="sneak-preview">Take a peek at this demo—it's like a sneak preview of the magic our AI Agency can bring to your team!</p>
+        <p>Explore the chat pop-up to experience its full capabilities!</p> <!-- Mention of chat widget -->
+    </div>
 
-    <div style="width: 0; height: 0;" id="VG_OVERLAY_CONTAINER">
+    <div id="VG_OVERLAY_CONTAINER">
         <!-- Here is where TIXAE Agents renders the widget. -->
-        <!-- Set render to 'full-width' then adjust the width and height to 500px (for example) to render the chatbot itself without the popup. -->
     </div>
 
     <script defer>
@@ -22,22 +86,12 @@
                 region: 'eu', // YOUR ACCOUNT REGION 
                 render: 'bottom-right', // can be 'full-width' or 'bottom-left' or 'bottom-right'
                 stylesheets: [
-                    // Base TIXAE Agents CSS
-                    "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
-                    // Add your custom css stylesheets, Can also add relative URL ('/public/your-file.css)
+                    "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css", // Base TIXAE Agents CSS
                 ],
-                // Optional user data -- uncomment and modify if needed
-                // user: {
-                //     name: 'John Doe', // User's name
-                //     email: 'johndoe@gmail.com', // User's email
-                //     phone: '+1234567890', // User's phone number
-                // },
-                // userID: 'USER_ID', // If you want to use your own user_id
-                // autostart: true, // Whether to autostart the chatbot with the proactive message
             }
             var VG_SCRIPT = document.createElement("script");
             VG_SCRIPT.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
-            VG_SCRIPT.defer = true; // Remove 'defer' if you want widget to load faster (Will affect website loading)
+            VG_SCRIPT.defer = true; // Remove 'defer' if you want widget to load faster
             document.body.appendChild(VG_SCRIPT);
         })();
     </script>
